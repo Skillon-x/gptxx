@@ -1,4 +1,5 @@
 import React from 'react';
+import { Twitter, Instagram, Linkedin, MessageCircle } from 'lucide-react';
 
 const Footer = () => {
   const footerSections = [
@@ -32,16 +33,28 @@ const Footer = () => {
     }
   ];
 
+  const socialIcons = [
+    { Icon: Twitter, href: "#", label: "Twitter" },
+    { Icon: Instagram, href: "#", label: "Instagram" },
+    { Icon: MessageCircle, href: "#", label: "WhatsApp" },
+    { Icon: Linkedin, href: "#", label: "LinkedIn" }
+  ];
+
   return (
     <footer className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500">
       <div className="max-w-7xl mx-auto px-6 py-16">
         {/* Social Icons */}
         <div className="flex space-x-6 mb-12">
-          {/* Icon placeholders as rounded squares */}
-          <div className="w-8 h-8 rounded-sm bg-white/20 hover:bg-white/30 cursor-pointer transition-colors"></div>
-          <div className="w-8 h-8 rounded-sm bg-white/20 hover:bg-white/30 cursor-pointer transition-colors"></div>
-          <div className="w-8 h-8 rounded-sm bg-white/20 hover:bg-white/30 cursor-pointer transition-colors"></div>
-          <div className="w-8 h-8 rounded-sm bg-white/20 hover:bg-white/30 cursor-pointer transition-colors"></div>
+          {socialIcons.map(({ Icon, href, label }) => (
+            <a
+              key={label}
+              href={href}
+              aria-label={label}
+              className="w-8 h-8 rounded-sm bg-white/20 hover:bg-white/30 cursor-pointer transition-colors flex items-center justify-center"
+            >
+              <Icon size={20} className="text-white" />
+            </a>
+          ))}
         </div>
 
         {/* Footer Links */}

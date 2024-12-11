@@ -7,7 +7,10 @@ import Testimonials from './Components/Home/Testimonials';
 import Footer from "./Components/Layout/Footer";
 import SignUp from './pages/SignUp';
 import Login from './pages/Login';
-
+import Math from "./Courses/Math";
+import Languages from './Courses/Languages';
+import Dashboard from "./Components/admin/Dashboard";
+import StudentDashboard from "./Components/Student/StudentDashboard";
 // Create a Home component that combines Hero and Testimonials
 const Home = () => {
   return (
@@ -30,6 +33,11 @@ const App = () => {
             <Route path="/features" element={<Features />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/login" element={<Login/>}/>
+            <Route path="/courses" element={<Math/>}/>
+            <Route path="/languages" element={<Languages/>}/>
+            <Route path="/admin/dashboard" element={<Dashboard />} />
+            <Route path="/student" element={<StudentDashboard />} />
+
           </Routes>
         </main>
         <Footer />

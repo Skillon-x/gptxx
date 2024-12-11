@@ -1,20 +1,21 @@
 import React, { useState } from 'react';
+import { User } from 'lucide-react';
 
 const Testimonials = () => {
   const testimonials = [
     {
       name: "Sophia",
-      image: "/api/placeholder/64/64",
+      avatarColor: "from-pink-400 to-rose-400",
       text: "The AI recommendations are spot on! It's helped me stay organized and study smarter"
     },
     {
       name: "Aarav",
-      image: "/api/placeholder/64/64",
+      avatarColor: "from-blue-400 to-cyan-400",
       text: "The quizzes and progress tracking are a game changer"
     },
     {
       name: "Riya",
-      image: "/api/placeholder/64/64",
+      avatarColor: "from-purple-400 to-fuchsia-400",
       text: "Event registrations and team collaborations are so easy now"
     }
   ];
@@ -61,11 +62,9 @@ const Testimonials = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-32">
           {testimonials.map((testimonial, index) => (
             <div key={index} className="text-center">
-              <img
-                src={testimonial.image}
-                alt={testimonial.name}
-                className="w-16 h-16 rounded-full mx-auto mb-4"
-              />
+              <div className={`w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r ${testimonial.avatarColor} flex items-center justify-center`}>
+                <User className="text-white w-8 h-8" />
+              </div>
               <p className="text-gray-300 mb-4">{testimonial.text}</p>
               <p className="text-white font-medium">{testimonial.name}</p>
             </div>
